@@ -14,3 +14,11 @@ Qs for Blanche - List App
 
 - concept/terminology review:
   argument, handler, function, variable, routine, method
+
+
+
+
+
+In real app scenario, wouldn't this be controlled more with DBs? E.g. remove an item from the list = remove from db? Need to remember all users lists and items, therefore store in DB?
+
+Also, need way to prevent entry of malicious text in the form input field! (how to strip/escape?)
