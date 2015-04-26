@@ -1,0 +1,16 @@
+Qs for Blanche - List App
+
+- understand "this" (refers to the object on which the currently executing method has been invoked... why not just write it out explicitly?)
+
+- understand .append(), .prepend(), .val(), .on()
+
+- want to be able to edit the already-input text
+
+- reminder callback function = ? (second part of an execution?)
+
+- list of most commonly used jQ functions? (cheat sheet)
+
+-jQ "normalizes" something??
+
+- concept/terminology review:
+  argument, handler, function, variable, routine, method
