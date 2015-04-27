@@ -21,15 +21,23 @@ $(document).ready(function() {
 	.keydown(function() {
 		if (event.which == 13) {
 		var value = $(this).val();
-		$('.form').html("<li>" + value + "</li>");
+		$('.form ul').append("<li>" + value + "</li>" );
+
 		}
 	})
 
 
-	$('button')
+	$('.btn-enter')
 
 	.click(function() {
-		$('.form').text("Button was clicked!");
+		var value = $('input').val();
+		$('.form ul').append("<li>" + value + "</li>");
+	})
+
+	$('.btn-reset')
+
+	.click(function() {
+		$('.form ul').children().remove();
 	})
 	
 
