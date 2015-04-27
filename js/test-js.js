@@ -25,4 +25,7 @@ $(document).ready (function() {
     	
 		});	
 
+	$('.link-test').html("<li>List item</li>");
+
+
 });

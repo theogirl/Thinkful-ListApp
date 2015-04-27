@@ -52,3 +52,7 @@ a.delete-btn {
 .output-list ul li {
 	color: red;
 }
+
+li {
+	color: deeppink;
+}
