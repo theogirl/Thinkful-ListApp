@@ -20,14 +20,16 @@ $(document).ready(function() {
 	})
 	.keydown(function() {
 		if (event.which == 13) {
-		$('p').css('color', 'deeppink');
+		var value = $(this).val();
+		$('.form').html("<li>" + value + "</li>");
 		}
 	})
 
+
 	$('button')
-	
+
 	.click(function() {
-		$('p').css('color', 'purple');
+		$('.form').text("Button was clicked!");
 	})
 	
 
