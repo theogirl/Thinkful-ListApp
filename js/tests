@@ -1,0 +1,13 @@
+$('#list').append(s);
+<div id='shopping'>
+ <ul>
+ <div id='list'>
+stuff goes here
+ </div>
+ </ul>
+</div>
+<ul id='list'>
+
+n = 1;
+s = 'list' + toString(n);;
+n = n+ 1;
