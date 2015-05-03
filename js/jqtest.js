@@ -15,24 +15,56 @@ $(document).ready(function() {
 
 	$('input')
 
-	.keydown(function() {
-		$(this).css('background-color', 'yellow');	
-	})
-	.keydown(function() {
+	//.keydown(function() {
+	//	$(this).css('background-color', 'yellow');	
+	//})
+
+	.keydown(function(event) {
 		if (event.which == 13) {
 		var value = $(this).val();
-		$('.form ul').append("<li>" + value + "</li>" );
+		$('.form ul').append("<li class='todos'>" + "<button>Not Done</button>" + ' ' + value + "</li>");
+		$(this).val(''); //passes an empty string to input field
+		$(this).focus(); //returns the focus to this field
 
 		}
 	})
 
+// Submit button next to input field
 
 	$('.btn-enter')
 
 	.click(function() {
 		var value = $('input').val();
-		$('.form ul').append("<li>" + value + "</li>");
+		$('.form ul').append("<li class='todos'>" + "<button>Not Done</button>" + ' ' + value + "</li>");
+		$('input').val(''); //passes an empty string to input field
+		$('input').focus(); //returns the focus to this field
 	})
+
+// Button to check item as done
+
+
+	$('ul').on('click', 'button', function() {
+
+		if ($(this).hasClass('done')) {
+			$(this).parent('.todos').css('text-decoration', 'none');
+			$(this).css('background-color', 'red');
+			$(this).text('Not Done');
+			$(this).removeClass('done');
+		}
+
+		else {
+		$(this).parent('.todos').css('text-decoration', 'line-through');
+		$(this).css('background-color', 'green');
+		$(this).text('Done');
+		$(this).addClass('done');
+		}
+
+		}) // end on click of Done button
+
+
+
+
+// Button to reset or clear whole list
 
 	$('.btn-reset')
 
