@@ -22,11 +22,16 @@ $(document).ready(function() {
 	.keydown(function(event) {
 		if (event.which == 13) {
 		var value = $(this).val();
-		$('.form ul').append("<li class='todos'>" + "<button>Not Done</button>" + ' ' + value + "</li>");
+
+		if (value == '') {
+			alert('Please enter a list item!');
+		}
+		else {
+		$('.form ul').append("<li class='todos'>" + "<button>Not Done</button>" + ' ' + value + "<div class='delete'>Delete Me</div>" + "</li>");
 		$(this).val(''); //passes an empty string to input field
 		$(this).focus(); //returns the focus to this field
-
 		}
+	}
 	})
 
 // Submit button next to input field
@@ -35,9 +40,16 @@ $(document).ready(function() {
 
 	.click(function() {
 		var value = $('input').val();
-		$('.form ul').append("<li class='todos'>" + "<button>Not Done</button>" + ' ' + value + "</li>");
+
+		if (value == '') {
+			alert('Please enter a list item!');
+		}
+
+		else {
+		$('.form ul').append("<li class='todos'>" + "<button>Not Done</button>" + ' ' + value + "<div class='delete'>Delete Me</div>" + "</li>");
 		$('input').val(''); //passes an empty string to input field
 		$('input').focus(); //returns the focus to this field
+		}
 	})
 
 // Button to check item as done
@@ -61,7 +73,11 @@ $(document).ready(function() {
 
 		}) // end on click of Done button
 
+// Delete list item button
 
+	$('ul').on('click', '.delete', function() {
+		$(this).parent().remove();
+	}) // end delete list item
 
 
 // Button to reset or clear whole list
@@ -70,7 +86,7 @@ $(document).ready(function() {
 
 	.click(function() {
 		$('.form ul').children().remove();
-	})
+	}) // end reset
 	
 
 
